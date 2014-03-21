@@ -1,0 +1,17 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+platforms:
+- name: ubuntu-12.04
+- name: debian-7.2.0
+- name: centos-6.5
+
+suites:
+- name: vesta
+  run_list:
+  - recipe[vesta]
+- name: firewall
+  run_list:
+  - recipe[vesta::firewall]
